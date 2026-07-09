@@ -1,16 +1,15 @@
 // ==========================================
 // RS Emon Tournament Maker
-// Firebase Realtime Database Config
+// Firebase Config
 // ==========================================
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
 
-import { 
-  getDatabase 
-} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
+
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 
 
-// Firebase Config (তোমার আসলটা এখানে থাকবে)
 const firebaseConfig = {
   apiKey: "AIzaSyCmCW3Nx8CAsuhKs4bvsWWRsgaVyrEPNns",
   authDomain: "rsemon-maker.firebaseapp.com",
@@ -22,13 +21,10 @@ const firebaseConfig = {
 };
 
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-import { 
-getAuth 
-} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 
+const db = getDatabase(app);
 
 const auth = getAuth(app);
 
