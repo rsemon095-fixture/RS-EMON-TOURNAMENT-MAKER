@@ -1,72 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+<title>RS Emon Tournament - Admin Login</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  font-family: Arial;
+  background:#111;
+  color:white;
+  text-align:center;
+  padding-top:80px;
+}
 
-<title>RS Emon Admin Panel</title>
+.box{
+  background:#222;
+  padding:30px;
+  width:300px;
+  margin:auto;
+  border-radius:15px;
+}
 
-<link rel="stylesheet" href="style.css">
+input{
+  width:90%;
+  padding:12px;
+  margin:10px;
+  border-radius:8px;
+  border:none;
+}
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+button{
+  padding:12px 30px;
+  border:none;
+  border-radius:8px;
+  background:#00c853;
+  color:white;
+  cursor:pointer;
+}
+</style>
 
 </head>
 
 <body>
 
-<div class="admin-container">
+<div class="box">
 
-<div class="admin-box">
+<h2>Admin Login</h2>
 
-<img src="assets/profile.png" class="admin-profile">
+<input id="email" type="email" placeholder="Email">
 
-<h1>RS Emon</h1>
+<input id="password" type="password" placeholder="Password">
 
-<h3>Tournament Admin Panel</h3>
+<button onclick="login()">Login</button>
 
-<div class="input-group">
-
-<label>Email</label>
-
-<input
-type="email"
-id="email"
-placeholder="Enter Admin Email">
+<p id="msg"></p>
 
 </div>
 
-<div class="input-group">
 
-<label>Password</label>
+<script type="module">
 
-<input
-type="password"
-id="password"
-placeholder="Enter Password">
+import { auth } from "./firebase.js";
 
-</div>
+import { 
+signInWithEmailAndPassword 
+} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 
-<button
-class="login-btn"
-onclick="loginAdmin()">
 
-<i class="fa-solid fa-right-to-bracket"></i>
+window.login = function(){
 
-Login
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
 
-</button>
 
-<p id="loginStatus"></p>
+signInWithEmailAndPassword(auth,email,password)
 
-</div>
+.then(()=>{
 
-</div>
+document.getElementById("msg").innerHTML="Login Successful";
 
-<script src="admin.js"></script>
+window.location.href="dashboard.html";
+
+})
+
+.catch((error)=>{
+
+document.getElementById("msg").innerHTML=error.message;
+
+});
+
+}
+
+</script>
+
 
 </body>
-
 </html>
