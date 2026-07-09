@@ -1495,3 +1495,36 @@ color:#fff;
 text-align:center;
 
 }
+textarea{
+
+width:100%;
+
+padding:15px;
+
+border-radius:10px;
+
+border:1px solid #00ff88;
+
+background:#111;
+
+color:#fff;
+
+font-size:16px;
+
+resize:none;
+
+}
+
+.notice-card{
+
+background:#111;
+
+padding:20px;
+
+border-left:5px solid #00ff88;
+
+border-radius:10px;
+
+margin-top:20px;
+
+}
