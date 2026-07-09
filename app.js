@@ -224,28 +224,24 @@ showToast("Welcome to RS Emon Tournament Maker");
 // MAINTENANCE MODE
 // ===============================
 
-let maintenanceMode = false;
+async function checkMaintenance() {
 
-function checkMaintenance() {
+    const snap = await getDoc(doc(db, "system", "maintenance"));
 
-    if (maintenanceMode) {
+    if (!snap.exists()) return;
+
+    const data = snap.data();
+
+    if (data.enabled) {
 
         document.body.innerHTML = `
-
         <div class="maintenance">
-
-            <h1>⚠ Maintenance</h1>
-
+            <h1>⚠️ App Updating</h1>
             <p>
-
-            RS Emon Tournament Maker is updating.
-
-            Please wait...
-
+            RS Emon Tournament Maker is under maintenance.<br>
+            Please try again later.
             </p>
-
         </div>
-
         `;
 
     }
