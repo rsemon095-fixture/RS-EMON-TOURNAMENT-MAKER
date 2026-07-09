@@ -108,6 +108,8 @@ ${away.teamName}
 
 }
 
+await loadFixtures();
+
 alert("Fixture Generated Successfully");
 
 }
