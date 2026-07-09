@@ -408,3 +408,9 @@ loadNotice();
 showToast("Application Ready");
 
 };
+// তোমার সব কোড থাকবে...
+
+// ----------------------------
+// Maintenance Check
+// ----------------------------
+
