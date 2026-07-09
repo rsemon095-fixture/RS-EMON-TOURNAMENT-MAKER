@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teams Manager</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="page-container">
+
+<h1>👥 Team Manager</h1>
+
+<div class="form-card">
+
+<label>Team Name</label>
+
+<input
+type="text"
+id="teamName"
+placeholder="Enter Team Name">
+
+<label>Manager Name</label>
+
+<input
+type="text"
+id="managerName"
+placeholder="Enter Manager Name">
+
+<label>Team Logo URL (Optional)</label>
+
+<input
+type="text"
+id="teamLogo"
+placeholder="https://...">
+
+<button id="addTeam">
+
+➕ Add Team
+
+</button>
+
+</div>
+
+<h2>Team List</h2>
+
+<div id="teamList">
+
+</div>
+
+</div>
+
+<script type="module" src="teams.js"></script>
+
+</body>
+
+</html>
