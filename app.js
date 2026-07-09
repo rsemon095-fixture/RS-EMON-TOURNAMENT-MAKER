@@ -2,7 +2,12 @@
  RS Emon Tournament Maker
  app.js Part-1
 =========================================*/
+import { db } from "./firebase.js";
 
+import {
+  doc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 "use strict";
 
 // ===============================
