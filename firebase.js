@@ -12,13 +12,13 @@ import {
 
 // Firebase Config (তোমার আসলটা এখানে থাকবে)
 const firebaseConfig = {
-  apiKey: "তোমার API KEY",
-  authDomain: "তোমার PROJECT.firebaseapp.com",
+  apiKey: "AIzaSyCmCW3Nx8CAsuhKs4bvsWWRsgaVyrEPNns",
+  authDomain: "rsemon-maker.firebaseapp.com",
   databaseURL: "https://rsemon-maker-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "তোমার PROJECT ID",
-  storageBucket: "তোমার STORAGE BUCKET",
-  messagingSenderId: "তোমার SENDER ID",
-  appId: "তোমার APP ID"
+  projectId: "rsemon-maker",
+  storageBucket: "rsemon-maker.firebasestorage.app",
+  messagingSenderId: "316755169140",
+  appId: "1:316755169140:web:9d471bb5f0c51b3a4c6621"
 };
 
 
