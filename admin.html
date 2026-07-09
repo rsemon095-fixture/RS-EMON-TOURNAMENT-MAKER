@@ -1,97 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>RS Emon Tournament - Admin Login</title>
-
-<style>
-body{
-  font-family: Arial;
-  background:#111;
-  color:white;
-  text-align:center;
-  padding-top:80px;
-}
-
-.box{
-  background:#222;
-  padding:30px;
-  width:300px;
-  margin:auto;
-  border-radius:15px;
-}
-
-input{
-  width:90%;
-  padding:12px;
-  margin:10px;
-  border-radius:8px;
-  border:none;
-}
-
-button{
-  padding:12px 30px;
-  border:none;
-  border-radius:8px;
-  background:#00c853;
-  color:white;
-  cursor:pointer;
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="box">
-
-<h2>Admin Login</h2>
-
-<input id="email" type="email" placeholder="Email">
-
-<input id="password" type="password" placeholder="Password">
-
-<button onclick="login()">Login</button>
-
-<p id="msg"></p>
-
-</div>
-
-
-<script type="module">
-
-import { auth } from "./firebase.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
 
 import { 
-signInWithEmailAndPassword 
+  getDatabase 
+} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
+
+import { 
+  getAuth 
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyCmCW3Nx8CAsuhKs4bvsWWRsgaVyrEPNns",
+  authDomain: "rsemon-maker.firebaseapp.com",
+  databaseURL: "https://rsemon-maker-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "rsemon-maker",
+  storageBucket: "rsemon-maker.firebasestorage.app",
+  messagingSenderId: "316755169140",
+  appId: "1:316755169140:web:9d471bb5f0c51b3a4c6621"
+};
+const app = initializeApp(firebaseConfig);
 
+const db = getDatabase(app);
 
-window.login = function(){
+const auth = getAuth(app);
 
-let email = document.getElementById("email").value;
-let password = document.getElementById("password").value;
-
-
-signInWithEmailAndPassword(auth,email,password)
-
-.then(()=>{
-
-document.getElementById("msg").innerHTML="Login Successful";
-
-window.location.href="dashboard.html";
-
-})
-
-.catch((error)=>{
-
-document.getElementById("msg").innerHTML=error.message;
-
-});
-
-}
-
-</script>
-
-
-</body>
-</html>
+export { db, auth };
