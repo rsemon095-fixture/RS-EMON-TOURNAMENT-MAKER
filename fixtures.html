@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fixture Generator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="page-container">
+
+<h1>⚽ Fixture Generator</h1>
+
+<div class="form-card">
+
+<label>Tournament Format</label>
+
+<select id="fixtureType">
+
+<option value="league">League</option>
+
+<option value="knockout">Knockout</option>
+
+<option value="group">Group Stage</option>
+
+<option value="group_knockout">Group + Knockout</option>
+
+</select>
+
+<button id="generateFixture">
+
+⚽ Generate Fixture
+
+</button>
+
+</div>
+
+<h2>Generated Fixtures</h2>
+
+<div id="fixtureList">
+
+No Fixture Generated
+
+</div>
+
+</div>
+
+<script type="module" src="fixtures.js"></script>
+
+</body>
+
+</html>
