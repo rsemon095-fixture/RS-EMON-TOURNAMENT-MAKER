@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Tournament</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="page-container">
+
+<header class="page-header">
+
+<h1>
+
+🏆 Create Tournament
+
+</h1>
+
+<p>
+
+RS Emon Tournament Maker
+
+</p>
+
+</header>
+
+<div class="form-card">
+
+<label>Tournament Name</label>
+
+<input
+type="text"
+id="tournamentName"
+placeholder="Enter Tournament Name">
+
+<label>Season</label>
+
+<input
+type="text"
+id="season"
+placeholder="2026">
+
+<label>Start Date</label>
+
+<input
+type="date"
+id="startDate">
+
+<label>End Date</label>
+
+<input
+type="date"
+id="endDate">
+
+<label>Tournament Type</label>
+
+<select id="tournamentType">
+
+<option value="league">
+
+League
+
+</option>
+
+<option value="knockout">
+
+Knockout
+
+</option>
+
+<option value="group">
+
+Group Stage
+
+</option>
+
+<option value="group_knockout">
+
+Group + Knockout
+
+</option>
+
+</select>
+
+<label>Total Teams</label>
+
+<input
+type="number"
+id="totalTeams"
+placeholder="8">
+
+<label>Number of Groups</label>
+
+<input
+type="number"
+id="groups"
+placeholder="2">
+
+<label>Match Time (Minutes)</label>
+
+<input
+type="number"
+id="matchTime"
+placeholder="8">
+
+<label>Extra Time</label>
+
+<select id="extraTime">
+
+<option>OFF</option>
+
+<option>ON</option>
+
+</select>
+
+<label>Penalty Shootout</label>
+
+<select id="penalty">
+
+<option>OFF</option>
+
+<option>ON</option>
+
+</select>
+
+<button
+id="saveTournament">
+
+💾 Save Tournament
+
+</button>
+
+</div>
+
+<div id="saveStatus"></div>
+
+</div>
+
+<script src="tournament.js"></script>
+
+</body>
+
+</html>
