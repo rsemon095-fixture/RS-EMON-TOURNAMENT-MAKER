@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Live Score</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="page-container">
+
+<h1>⚽ Live Score Update</h1>
+
+<label>Select Match</label>
+
+<select id="matchSelect">
+
+<option>Select Match</option>
+
+</select>
+
+<label>Home Score</label>
+
+<input type="number" id="homeScore" value="0">
+
+<label>Away Score</label>
+
+<input type="number" id="awayScore" value="0">
+
+<label>Match Status</label>
+
+<select id="matchStatus">
+
+<option>Upcoming</option>
+<option selected>Live</option>
+<option>Finished</option>
+
+</select>
+
+<button id="updateScore">
+
+💾 Update Score
+
+</button>
+
+<div id="liveMessage"></div>
+
+</div>
+
+<script type="module" src="live.js"></script>
+
+</body>
+
+</html>
