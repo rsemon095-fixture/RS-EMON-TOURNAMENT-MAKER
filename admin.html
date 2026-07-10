@@ -333,7 +333,107 @@ Save Tournament
         <i class="fa-solid fa-right-from-bracket"></i>
 
         Logout
+<!-- ==========================================
+     TEAM MANAGEMENT
+========================================== -->
 
+<section class="team-section">
+
+    <div class="section-header">
+        <h2>👥 Team Management</h2>
+        <p>Add, Edit & Delete Tournament Teams</p>
+    </div>
+
+    <div class="team-card">
+
+        <form id="teamForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Team Name</label>
+
+                    <input
+                        type="text"
+                        id="teamName"
+                        placeholder="Enter Team Name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Manager Name</label>
+
+                    <input
+                        type="text"
+                        id="managerName"
+                        placeholder="Enter Manager Name"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Team Logo URL</label>
+
+                    <input
+                        type="text"
+                        id="teamLogo"
+                        placeholder="https://..."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Group</label>
+
+                    <select id="teamGroup">
+
+                        <option value="">Select Group</option>
+
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button
+                type="submit"
+                class="save-team-btn"
+            >
+                ➕ Add Team
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     TEAM LIST
+========================================== -->
+
+<section class="team-list-section">
+
+    <div class="section-header">
+        <h2>📋 Team List</h2>
+    </div>
+
+    <div id="teamList">
+
+        <!-- Teams Load Here -->
+
+    </div>
+
+</section>
     </button>
 
 </section>
