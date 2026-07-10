@@ -1,256 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<title>RS Emon Tournament Maker</title>
+    <title>RS Emon Tournament Maker</title>
 
-<meta name="theme-color" content="#0f172a">
+    <meta name="theme-color"
+        content="#0f172a">
 
-<link rel="icon" href="assets/logo.png">
+    <meta name="description"
+        content="Professional Football Tournament Management System">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon"
+        href="assets/logo.png">
 
-<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- ===============================
-        Splash Screen
-================================ -->
+<!-- ===================================
+        SPLASH SCREEN
+==================================== -->
 
 <div id="splash-screen">
 
-<div class="loader-container">
+    <div class="loader-container">
 
-<img src="assets/profile.png"
-class="profile-image">
+        <div class="profile-ring">
 
-<h1 class="rgb-title">
-RS Emon Tournament Maker
-</h1>
+            <img src="assets/profile.png"
+                class="profile-image">
 
-<p class="powered">
-Powered By RS Emon
-</p>
+        </div>
 
-<div class="loading-bar">
+        <h1 class="rgb-title">
 
-<div class="loading-progress"></div>
+            RS Emon Tournament Maker
 
-</div>
+        </h1>
 
-</div>
+        <p class="powered">
 
-</div>
+            Professional Football Tournament System
 
-<!-- ===============================
-        Main App
-================================ -->
+        </p>
 
-<div id="app">
+        <span class="version">
 
-<header class="top-header">
+            Version 1.0.0
 
-<div class="header-left">
+        </span>
 
-<img src="assets/profile.png"
-class="header-profile">
+        <div class="loading-bar">
 
-<div>
+            <div class="loading-progress">
 
-<h2 id="rgb-name">
+            </div>
 
-RS Emon Tournament Maker
+        </div>
 
-</h2>
+        <p class="loading-text">
 
-<p>
+            Loading Tournament...
 
-Professional Football Tournament System
+        </p>
 
-</p>
+    </div>
 
 </div>
 
-</div>
-
-<div class="header-right">
-
-<button id="language">
-
-🇧🇩 বাংলা
-
-</button>
-
-</div>
-
-</header>
-
-<!-- ============================= -->
-
-<section class="hero">
-
-<div class="hero-overlay">
-
-<h1>
-
-WELCOME
-
-</h1>
-
-<h2>
-
-FOOTBALL TOURNAMENT
-
-</h2>
-
-<p>
-
-Create • Manage • Live Update
-
-</p>
-
-</div>
-
-</section>
-
-<!-- ============================= -->
-
-<section class="dashboard">
-
-<div class="dashboard-title">
-
-<i class="fa-solid fa-fire"></i>
-
-Running Tournament
-
-</div>
-
-<div class="dashboard-card">
-
-<div class="left">
-
-<h2 id="tournamentName">
-
-No Tournament Running
-
-</h2>
-
-<p>
-
-Start your first tournament
-from Admin Panel
-
-</p>
-
-</div>
-
-<div class="right">
-
-<span class="status">
-
-OFFLINE
-
-</span>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ============================= -->
+<!-- ===================================
+        MAIN
+        <!-- ===================================
+        QUICK MENU
+==================================== -->
 
 <section class="quick-menu">
 
-<div class="menu-grid">
+    <div class="section-title">
+        <i class="fa-solid fa-table-cells-large"></i>
+        Quick Access
+    </div>
 
-<a href="#" class="menu-card">
+    <div class="menu-grid">
 
-<i class="fa-solid fa-trophy"></i>
+        <a href="tournament.html" class="menu-card">
+            <i class="fa-solid fa-trophy"></i>
+            <span>Tournament</span>
+        </a>
 
-<span>
+        <a href="teams.html" class="menu-card">
+            <i class="fa-solid fa-users"></i>
+            <span>Teams</span>
+        </a>
 
-Tournament
+        <a href="fixtures.html" class="menu-card">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Fixtures</span>
+        </a>
 
-</span>
+        <a href="live.html" class="menu-card">
+            <i class="fa-solid fa-futbol"></i>
+            <span>Live Score</span>
+        </a>
 
-</a>
+        <a href="points.html" class="menu-card">
+            <i class="fa-solid fa-ranking-star"></i>
+            <span>Points</span>
+        </a>
 
-<a href="#" class="menu-card">
+        <a href="bracket.html" class="menu-card">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>Bracket</span>
+        </a>
 
-<i class="fa-solid fa-users"></i>
+        <a href="notice.html" class="menu-card">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span>Notice</span>
+        </a>
 
-<span>
+        <a href="gallery.html" class="menu-card">
+            <i class="fa-solid fa-image"></i>
+            <span>Gallery</span>
+        </a>
 
-Teams
+        <a href="settings.html" class="menu-card">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
 
-</span>
-
-</a>
-
-<a href="#" class="menu-card">
-
-<i class="fa-solid fa-calendar-days"></i>
-
-<span>
-
-Fixtures
-
-</span>
-
-</a>
-
-<a href="#" class="menu-card">
-
-<i class="fa-solid fa-futbol"></i>
-
-<span>
-
-Live Score
-
-</span>
-
-</a>
-
-<a href="#" class="menu-card">
-
-<i class="fa-solid fa-ranking-star"></i>
-
-<span>
-
-Points
-
-</span>
-
-</a>
-
-<a href="#" class="menu-card">
-
-<i class="fa-solid fa-diagram-project"></i>
-
-<span>
-
-Bracket
-
-</span>
-
-</a>
-
-</div>
+    </div>
 
 </section>
-<!-- =========================
-      LIVE MATCH SECTION
-========================== -->
+
+<!-- ===================================
+        LIVE MATCH
+==================================== -->
 
 <section class="live-match">
 
@@ -278,9 +176,7 @@ Bracket
             <span id="scoreB">0</span>
 
             <p class="live-status">
-
                 🔴 LIVE
-
             </p>
 
         </div>
@@ -297,314 +193,93 @@ Bracket
 
 </section>
 
-<!-- =========================
-     UPCOMING MATCH
-========================== -->
+<!-- ===================================
+      UPCOMING MATCH
+==================================== -->
 
 <section class="upcoming">
 
-<div class="section-title">
+    <div class="section-title">
 
-<i class="fa-solid fa-calendar-days"></i>
+        <i class="fa-solid fa-calendar-days"></i>
 
-Upcoming Match
+        Upcoming Match
 
-</div>
+    </div>
 
-<div class="upcoming-card">
+    <div class="upcoming-card">
 
-<h3>
+        <div class="match-team">
 
-Team A
+            <img src="assets/team1.png">
 
-</h3>
+            <h3>Team A</h3>
 
-<span>
+        </div>
 
-VS
+        <div class="match-vs">
 
-</span>
+            VS
 
-<h3>
+        </div>
 
-Team B
+        <div class="match-team">
 
-</h3>
+            <img src="assets/team2.png">
 
-<p>
+            <h3>Team B</h3>
 
-📅 15 July 2026
+        </div>
 
-</p>
+        <div class="match-info">
 
-<p>
-
-🕗 8:00 PM
-
-</p>
-
-</div>
-
-</section>
-
-<!-- =========================
-      POINT TABLE
-========================== -->
-
-<section class="point-preview">
-
-<div class="section-title">
-
-<i class="fa-solid fa-ranking-star"></i>
-
-Points Table
-
-</div>
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>#</th>
-
-<th>Team</th>
-
-<th>Pts</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>1</td>
-
-<td>Team A</td>
-
-<td>9</td>
-
-</tr>
-
-<tr>
-
-<td>2</td>
-
-<td>Team B</td>
-
-<td>6</td>
-
-</tr>
-
-<tr>
-
-<td>3</td>
-
-<td>Team C</td>
-
-<td>3</td>
-
-</tr>
-
-<tr>
-
-<td>4</td>
-
-<td>Team D</td>
-
-<td>0</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-</section>
-
-<!-- =========================
-      NOTICE BOARD
-========================== -->
+            <p>📅
+         <!-- ===================================
+        NOTICE BOARD
+==================================== -->
 
 <section class="notice">
 
-<div class="section-title">
+    <div class="section-title">
 
-<i class="fa-solid fa-bullhorn"></i>
+        <i class="fa-solid fa-bullhorn"></i>
 
-Latest Notice
+        Latest Notice
 
-</div>
+    </div>
 
-<div class="notice-card">
+    <div class="notice-card">
 
-<p>
+        <marquee behavior="scroll" direction="left">
 
-📢 Welcome to RS Emon Tournament Maker
+            📢 Welcome to RS Emon Tournament Maker |
+            Tournament Registration Open |
+            Stay Connected With RS Emon
 
-</p>
+        </marquee>
 
-</div>
+    </div>
 
 </section>
 
-<!-- =========================
-      TOURNAMENT STATS
-========================== -->
+<!-- ===================================
+        TOURNAMENT STATISTICS
+==================================== -->
 
 <section class="stats">
 
-<div class="section-title">
+    <div class="section-title">
 
-<i class="fa-solid fa-chart-line"></i>
+        <i class="fa-solid fa-chart-line"></i>
 
-Tournament Statistics
+        Tournament Statistics
 
-</div>
+    </div>
 
-<div class="stats-grid">
+    <div class="stats-grid">
 
-<div class="stat-card">
+        <div class="stat-card">
 
-<h2>
+            <i class="fa-solid fa-users"></i>
 
-16
-
-</h2>
-
-<p>
-
-Teams
-
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2>
-
-24
-
-</h2>
-
-<p>
-
-Matches
-
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2>
-
-58
-
-</h2>
-
-<p>
-
-Goals
-
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2>
-
-1
-
-</h2>
-
-<p>
-
-Champion
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-      FOOTER
-========================== -->
-
-<footer>
-
-<h2>
-
-RS Emon Tournament Maker
-
-</h2>
-
-<p>
-
-Powered By RS Emon
-
-</p>
-
-</footer>
-
-<!-- =========================
-      BOTTOM NAVIGATION
-========================== -->
-
-<nav class="bottom-nav">
-
-<a href="#">
-
-<i class="fa-solid fa-house"></i>
-
-<span>Home</span>
-
-</a>
-
-<a href="#">
-
-<i class="fa-solid fa-trophy"></i>
-
-<span>Tournament</span>
-
-</a>
-
-<a href="#">
-
-<i class="fa-solid fa-futbol"></i>
-
-<span>Live</span>
-
-</a>
-
-<a href="#">
-
-<i class="fa-solid fa-user-shield"></i>
-
-<span>Admin</span>
-
-</a>
-
-<a href="#">
-
-<i class="fa-solid fa-gear"></i>
-
-<span>Settings</span>
-
-</a>
-
-</nav>
-
-<script type="module" src="app.js"></script>
-
-</body>
-
-</html>
+            <h2>16           
