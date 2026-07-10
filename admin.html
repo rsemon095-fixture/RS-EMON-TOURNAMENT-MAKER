@@ -1,25 +1,367 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+<!DOCTYPE html>
+<html lang="en">
 
-import { 
-  getDatabase 
-} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
+<head>
 
-import { 
-  getAuth 
-} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
-const firebaseConfig = {
-  apiKey: "AIzaSyCmCW3Nx8CAsuhKs4bvsWWRsgaVyrEPNns",
-  authDomain: "rsemon-maker.firebaseapp.com",
-  databaseURL: "https://rsemon-maker-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "rsemon-maker",
-  storageBucket: "rsemon-maker.firebasestorage.app",
-  messagingSenderId: "316755169140",
-  appId: "1:316755169140:web:9d471bb5f0c51b3a4c6621"
-};
-const app = initializeApp(firebaseConfig);
+<meta charset="UTF-8">
 
-const db = getDatabase(app);
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
 
-const auth = getAuth(app);
+<title>RS Emon Admin Panel</title>
 
-export { db, auth };
+<link rel="stylesheet" href="admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+<header class="admin-header">
+
+<img src="assets/profile.png"
+class="admin-profile">
+
+<div>
+
+<h1>
+
+RS Emon Admin Panel
+
+</h1>
+
+<p>
+
+Football Tournament Manager
+
+</p>
+
+</div>
+
+</header>
+
+<section class="admin-card">
+
+<h2>
+
+<i class="fa-solid fa-trophy"></i>
+
+Tournament Information
+
+</h2>
+
+<label>
+
+Tournament Name
+
+</label>
+
+<input
+type="text"
+id="tournamentInput"
+placeholder="Tournament Name">
+
+<label>
+
+Tournament Status
+
+</label>
+
+<select id="statusInput">
+
+<option value="LIVE">
+
+LIVE
+
+</option>
+
+<option value="OFFLINE">
+
+OFFLINE
+
+</option>
+
+<option value="FINISHED">
+
+FINISHED
+
+</option>
+
+</select>
+
+<button id="saveTournament">
+
+Save Tournament
+
+</button>
+
+</section>
+<!-- ===================================
+        LIVE MATCH CONTROL
+=================================== -->
+
+<section class="admin-card">
+
+    <h2>
+
+        <i class="fa-solid fa-futbol"></i>
+
+        Live Match
+
+    </h2>
+
+    <label>
+
+        Team A Name
+
+    </label>
+
+    <input
+        type="text"
+        id="teamA"
+        placeholder="Team A">
+
+    <label>
+
+        Team A Score
+
+    </label>
+
+    <input
+        type="number"
+        id="scoreAInput"
+        value="0">
+
+    <label>
+
+        Team B Name
+
+    </label>
+
+    <input
+        type="text"
+        id="teamB"
+        placeholder="Team B">
+
+    <label>
+
+        Team B Score
+
+    </label>
+
+    <input
+        type="number"
+        id="scoreBInput"
+        value="0">
+
+    <button id="saveLive">
+
+        Update Live Match
+
+    </button>
+
+</section>
+
+<!-- ===================================
+        NOTICE BOARD
+=================================== -->
+
+<section class="admin-card">
+
+    <h2>
+
+        <i class="fa-solid fa-bullhorn"></i>
+
+        Notice Board
+
+    </h2>
+
+    <textarea
+        id="noticeInput"
+        rows="5"
+        placeholder="Write Notice Here..."></textarea>
+
+    <button id="saveNotice">
+
+        Publish Notice
+
+    </button>
+
+</section>
+
+<!-- ===================================
+        APP CONTROL
+=================================== -->
+
+<section class="admin-card">
+
+    <h2>
+
+        <i class="fa-solid fa-mobile-screen"></i>
+
+        Application Control
+
+    </h2>
+
+    <button id="maintenanceBtn">
+
+        🔧 Maintenance Mode
+
+    </button>
+
+    <button id="updateBtn">
+
+        🚀 Force App Update
+
+    </button>
+
+</section>
+<!-- ===================================
+        POINTS TABLE
+=================================== -->
+
+<section class="admin-card">
+
+    <h2>
+
+        <i class="fa-solid fa-ranking-star"></i>
+
+        Points Table
+
+    </h2>
+
+    <label>Team Name</label>
+
+    <input
+        type="text"
+        id="pointTeam"
+        placeholder="Team Name">
+
+    <label>Points</label>
+
+    <input
+        type="number"
+        id="pointValue"
+        value="0">
+
+    <button id="savePoints">
+
+        Save Points
+
+    </button>
+
+</section>
+
+<!-- ===================================
+        TOURNAMENT STATISTICS
+=================================== -->
+
+<section class="admin-card">
+
+    <h2>
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        Tournament Statistics
+
+    </h2>
+
+    <label>Total Teams</label>
+
+    <input
+        type="number"
+        id="totalTeams"
+        value="16">
+
+    <label>Total Matches</label>
+
+    <input
+        type="number"
+        id="totalMatches"
+        value="24">
+
+    <label>Total Goals</label>
+
+    <input
+        type="number"
+        id="totalGoals"
+        value="0">
+
+    <button id="saveStats">
+
+        Save Statistics
+
+    </button>
+
+</section>
+
+<!-- ===================================
+        ADMIN PROFILE
+=================================== -->
+
+<section class="admin-card profile-card">
+
+    <img src="assets/profile.png"
+        class="admin-photo">
+
+    <h2>
+
+        RS Emon
+
+    </h2>
+
+    <p>
+
+        Super Administrator
+
+    </p>
+
+</section>
+
+<!-- ===================================
+        LOGOUT
+=================================== -->
+
+<section class="admin-card">
+
+    <button id="logoutBtn" class="logout-btn">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+
+    </button>
+
+</section>
+
+<!-- ===================================
+        FOOTER
+=================================== -->
+
+<footer>
+
+    <h3>
+
+        RS Emon Tournament Maker
+
+    </h3>
+
+    <p>
+
+        Admin Panel Version 1.0.0
+
+    </p>
+
+</footer>
+
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+
+</html>
