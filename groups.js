@@ -702,3 +702,67 @@ function resetGroupForm(){
 
 
 }
+/* ==========================================
+   Group Module Final
+   Part 5
+========================================== */
+
+
+/* ==========================================
+   Group Counter
+========================================== */
+
+
+const groupCount =
+document.getElementById("groupCount");
+
+
+
+onSnapshot(groupsRef,(snapshot)=>{
+
+
+    if(groupCount){
+
+
+        groupCount.textContent =
+
+        `${snapshot.size} Groups`;
+
+
+    }
+
+
+
+});
+
+
+
+/* ==========================================
+   Module Ready
+========================================== */
+
+
+window.addEventListener("load",()=>{
+
+
+    console.log(
+        "=============================="
+    );
+
+
+    console.log(
+        "RS Emon Group Management Ready"
+    );
+
+
+    console.log(
+        "Unlimited Groups Enabled"
+    );
+
+
+    console.log(
+        "=============================="
+    );
+
+
+});
