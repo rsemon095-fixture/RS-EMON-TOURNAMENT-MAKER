@@ -1,144 +1,435 @@
-/*=========================================
- RS Emon Tournament Maker
- teams.js
-=========================================*/
+/* ==========================================
+   RS Emon Tournament Maker
+   teams.js
+   Part 1
+========================================== */
 
 import { db } from "./firebase.js";
 
 import {
-collection,
-addDoc,
-getDocs,
-deleteDoc,
-doc,
-serverTimestamp
+    collection,
+    addDoc,
+    updateDoc,
+    deleteDoc,
+    doc,
+    getDoc,
+    onSnapshot,
+    serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
-const addBtn = document.getElementById("addTeam");
+/* ==========================================
+   Collection Reference
+========================================== */
+
+const teamsRef = collection(db, "teams");
+
+/* ==========================================
+   HTML Elements
+========================================== */
+
+const teamForm = document.getElementById("teamForm");
+
+const teamName = document.getElementById("teamName");
+
+const managerName = document.getElementById("managerName");
+
+const teamLogo = document.getElementById("teamLogo");
+
+const teamGroup = document.getElementById("teamGroup");
+
+const addTeamBtn = document.getElementById("addTeam");
+
 const teamList = document.getElementById("teamList");
 
-addBtn.addEventListener("click", addTeam);
+/* ==========================================
+   Global Variables
+========================================== */
 
-// ===========================
-// Add Team
-// ===========================
+let editMode = false;
 
-async function addTeam(){
+let editTeamId = null;
 
-const teamName =
-document.getElementById("teamName").value.trim();
+/* ==========================================
+   Reset Form
+========================================== */
 
-const managerName =
-document.getElementById("managerName").value.trim();
+function resetForm() {
 
-const teamLogo =
-document.getElementById("teamLogo").value.trim();
+    teamForm.reset();
 
-if(teamName===""){
+    editMode = false;
 
-alert("Enter Team Name");
+    editTeamId = null;
 
-return;
+    addTeamBtn.innerHTML = "➕ Add Team";
+// Default Logo
 
+const finalLogo = logo === ""
+    ? "assets/default-team.png"
+    : logo;
 }
 
-try{
+/* ==========================================
+   Initialize
+========================================== */
 
-await addDoc(collection(db,"teams"),{
+window.addEventListener("DOMContentLoaded", () => {
+console.log("Team Management Ready");
+    resetForm();
 
-teamName,
-
-managerName,
-
-teamLogo,
-
-createdAt:serverTimestamp()
+    console.log("Teams Module Loaded");
 
 });
+/* ==========================================
+   Team Form Submit
+   Part 2
+========================================== */
 
-document.getElementById("teamName").value="";
-document.getElementById("managerName").value="";
-document.getElementById("teamLogo").value="";
+teamForm.addEventListener("submit", async (e) => {
 
-loadTeams();
+    e.preventDefault();
 
-alert("Team Added Successfully");
+    const team = teamName.value.trim();
+    const manager = managerName.value.trim();
+    const logo = teamLogo.value.trim();
+    const group = teamGroup.value;
 
-}
+    // ==========================
+    // Validation
+    // ==========================
 
-catch(error){
+    if (team === "") {
+        alert("Please enter Team Name.");
+        teamName.focus();
+        return;
+    }
 
-console.log(error);
+    if (manager === "") {
+        alert("Please enter Manager Name.");
+        managerName.focus();
+        return;
+    }
 
-alert("Failed");
+    if (group === "") {
+        alert("Please select a Group.");
+        teamGroup.focus();
+        return;
+    }
 
-}
+    // ==========================
+    // Disable Button
+    // ==========================
 
-}
+    addTeamBtn.disabled = true;
+    addTeamBtn.textContent = editMode
+        ? "Updating..."
+        : "Saving...";
 
-// ===========================
-// Load Teams
-// ===========================
+    try {
 
-async function loadTeams(){
+        const teamData = {
 
-teamList.innerHTML="Loading...";
+            teamName: team,
+            managerName: manager,
+            teamLogo: logo,
+            teamGroup: group,
+            createdAt: serverTimestamp()
 
-const snapshot =
-await getDocs(collection(db,"teams"));
+        };
 
-teamList.innerHTML="";
+        // ==========================
+        // Add New Team
+        // ==========================
 
-snapshot.forEach((team)=>{
+        if (!editMode) {
 
-const data = team.data();
+            await addDoc(teamsRef, teamData);
 
-teamList.innerHTML += `
+            alert("✅ Team Added Successfully");
 
-<div class="team-card">
+        }
 
-<img src="${
-data.teamLogo || "assets/default-team.png"
-}" class="team-logo">
+        // ==========================
+        // Update Team
+        // ==========================
 
-<div class="team-info">
+        else {
 
-<h3>${data.teamName}</h3>
+            await updateDoc(
+                doc(db, "teams", editTeamId),
+                {
+                    teamName: team,
+                    managerName: manager,
+                    teamLogo: logo,
+                    teamGroup: group
+                }
+            );
 
-<p>${data.managerName}</p>
+            alert("✅ Team Updated Successfully");
 
-</div>
+        }
 
-<button
-class="delete-btn"
-onclick="deleteTeam('${team.id}')">
+        resetForm();
 
-Delete
+    }
 
-</button>
+    catch (error) {
 
-</div>
+        console.error(error);
 
-`;
+        alert("❌ Failed to save team.");
+
+    }
+
+    finally {
+
+        addTeamBtn.disabled = false;
+
+        addTeamBtn.innerHTML = editMode
+            ? "💾 Update Team"
+            : "➕ Add Team";
+
+    }
 
 });
+/* ==========================================
+   Realtime Team List
+   Part 3
+========================================== */
+/* ==========================================
+   Team Counter
+========================================== */
+
+const teamCount = snapshot.size;
+
+/* ==========================================
+   Team Count (Optional)
+========================================== */
+
+const counter = document.getElementById("teamCount");
+
+if (counter) {
+
+    counter.textContent = `${teamCount} Teams`;
 
 }
+onSnapshot(teamsRef, (snapshot) => {
 
-loadTeams();
+    teamList.innerHTML = "";
 
-// ===========================
-// Delete Team
-// ===========================
+    // ==========================
+    // Empty State
+    // ==========================
 
-window.deleteTeam = async(id)=>{
+    if (snapshot.empty) {
 
-if(confirm("Delete Team?")){
+        teamList.innerHTML = `
+            <div class="empty-team">
+                <h3>No Teams Found</h3>
+                <p>Add your first team to start the tournament.</p>
+            </div>
+        `;
 
-await deleteDoc(doc(db,"teams",id));
+        return;
+    }
 
-loadTeams();
+    // ==========================
+    // Team Cards
+    // ==========================
 
-}
+    snapshot.forEach((team) => {
+
+        const data = team.data();
+
+        const card = document.createElement("div");
+
+        card.className = "team-item";
+
+        card.innerHTML = `
+
+            <div class="team-left">
+
+                <img
+                    class="team-logo"
+                    src="${data.teamLogo || "assets/default-team.png"}"
+                    alt="${data.teamName}"
+                    onerror="this.src='assets/default-team.png'"
+                >
+
+                <div class="team-info">
+
+                    <h3>${data.teamName}</h3>
+
+                    <p>👤 ${data.managerName}</p>
+
+                    <p>🏆 Group ${data.teamGroup}</p>
+
+                </div>
+
+            </div>
+
+            <div class="team-actions">
+
+                <button
+                    class="edit-btn"
+                    onclick="editTeam('${team.id}')">
+                    Edit
+                </button>
+
+                <button
+                    class="delete-btn"
+                    onclick="deleteTeam('${team.id}')">
+                    Delete
+                </button>
+
+            </div>
+
+        `;
+
+        teamList.appendChild(card);
+
+    });
+
+});
+/* ==========================================
+   Edit Team
+   Part 4
+========================================== */
+
+window.editTeam = async (id) => {
+
+    try {
+
+        const teamElement = document.querySelector(
+            `[onclick="editTeam('${id}')"]`
+        ).closest(".team-item");
+
+        teamName.value =
+            teamElement.querySelector(".team-info h3").textContent;
+
+        const info =
+            teamElement.querySelectorAll(".team-info p");
+
+        managerName.value =
+            info[0].textContent.replace("👤 ", "");
+
+        teamGroup.value =
+            info[1].textContent.replace("🏆 Group ", "");
+teamLogo: finalLogo,
+        teamLogo.value =
+            teamElement.querySelector(".team-logo").src;
+
+        editMode = true;
+
+        editTeamId = id;
+
+        addTeamBtn.innerHTML = "💾 Update Team";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert("Failed to load team.");
+
+    }
+
+};
+
+/* ==========================================
+   Delete Team
+========================================== */
+
+window.deleteTeam = async (id) => {
+
+    const confirmDelete = confirm(
+        "Are you sure you want to delete this team?"
+    );
+
+    if (!confirmDelete) return;
+
+    try {
+
+        await deleteDoc(
+            doc(db, "teams", id)
+        );
+
+        if (editTeamId === id) {
+            resetForm();
+        }
+teamName.focus();
+        alert("✅ Team Deleted Successfully");
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert("❌ Failed to delete team.");
+
+    }
+
+};
+/* ==========================================
+   Edit Team (Firestore Version)
+   Part 5
+========================================== */
+
+window.editTeam = async (id) => {
+
+    try {
+
+        const teamRef = doc(db, "teams", id);
+
+        const snapshot = await getDoc(teamRef);
+
+        if (!snapshot.exists()) {
+
+            alert("Team not found.");
+
+            return;
+
+        }
+
+        const data = snapshot.data();
+
+        teamName.value = data.teamName || "";
+
+        managerName.value = data.managerName || "";
+
+        teamLogo.value = data.teamLogo || "";
+
+        teamGroup.value = data.teamGroup || "";
+
+        editMode = true;
+
+        editTeamId = id;
+
+        addTeamBtn.innerHTML = "💾 Update Team";
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert("Failed to load team.");
+
+    }
 
 };
