@@ -806,3 +806,214 @@ text-align:center;
 }
 
  }
+/*==================================
+      GLASS EFFECT
+==================================*/
+
+.glass{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+
+}
+
+/*==================================
+      BUTTON EFFECT
+==================================*/
+
+button,
+.hero-btn,
+.menu-card{
+
+    transition:.35s ease;
+
+}
+
+button:hover,
+.hero-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(0,255,153,.30);
+
+}
+
+/*==================================
+      CARD HOVER
+==================================*/
+
+.dashboard-card,
+.live-card,
+.upcoming-card,
+.notice-card,
+.stat-card,
+.feature-card{
+
+    transition:.35s;
+
+}
+
+.dashboard-card:hover,
+.live-card:hover,
+.upcoming-card:hover,
+.notice-card:hover,
+.stat-card:hover,
+.feature-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/*==================================
+      RGB BORDER
+==================================*/
+
+.rgb-border{
+
+    border:2px solid transparent;
+
+    background:
+
+    linear-gradient(#07151f,#07151f) padding-box,
+
+    linear-gradient(45deg,#00ff99,#00ffff,#ffd700,#00ff99) border-box;
+
+}
+
+/*==================================
+      IMAGE HOVER
+==================================*/
+
+img{
+
+    transition:.35s;
+
+}
+
+img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*==================================
+      TEXT SELECTION
+==================================*/
+
+::selection{
+
+    background:var(--green);
+
+    color:#000;
+
+}
+
+/*==================================
+      INPUT STYLE
+==================================*/
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:12px 15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#132635;
+
+    color:#fff;
+
+    margin-top:8px;
+
+}
+
+input:focus,
+textarea:focus{
+
+    border:2px solid var(--green);
+
+}
+
+/*==================================
+      LOADING ANIMATION
+==================================*/
+
+.loading{
+
+    animation:loadingPulse 1.4s infinite;
+
+}
+
+@keyframes loadingPulse{
+
+0%{
+
+opacity:.5;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.5;
+
+}
+
+}
+
+/*==================================
+      GLOW EFFECT
+==================================*/
+
+.glow{
+
+    box-shadow:
+
+    0 0 10px #00ff99,
+
+    0 0 25px #00ff99,
+
+    0 0 40px #00ff99;
+
+}
+
+/*==================================
+      PAGE SPACING
+==================================*/
+
+section{
+
+    margin-bottom:25px;
+
+}
+
+/*==================================
+      SMOOTH SCROLL
+==================================*/
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/*==================================
+      END OF CSS
+==================================*/
