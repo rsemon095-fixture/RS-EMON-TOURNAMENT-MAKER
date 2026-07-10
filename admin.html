@@ -336,7 +336,178 @@ Save Tournament
 <!-- ==========================================
      TEAM MANAGEMENT
 ========================================== -->
+<!-- ==========================================
+     MATCH MANAGEMENT
+========================================== -->
 
+<section class="match-section">
+
+    <div class="section-header">
+
+        <h2>⚽ Match Management</h2>
+
+        <p>Create, Edit & Manage Tournament Matches</p>
+
+    </div>
+
+    <div class="match-card">
+
+        <form id="matchForm">
+
+            <!-- Row 1 -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Home Team</label>
+
+                    <select id="homeTeam" required>
+
+                        <option value="">
+                            Select Home Team
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Away Team</label>
+
+                    <select id="awayTeam" required>
+
+                        <option value="">
+                            Select Away Team
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Row 2 -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Match Date</label>
+
+                    <input
+                        type="date"
+                        id="matchDate"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Match Time</label>
+
+                    <input
+                        type="time"
+                        id="matchTime"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- Row 3 -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Round</label>
+
+                    <select id="matchRound" required>
+
+                        <option value="">
+                            Select Round
+                        </option>
+
+                        <option value="Group A">Group A</option>
+
+                        <option value="Group B">Group B</option>
+
+                        <option value="Group C">Group C</option>
+
+                        <option value="Quarter Final">Quarter Final</option>
+
+                        <option value="Semi Final">Semi Final</option>
+
+                        <option value="Final">Final</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Status</label>
+
+                    <select id="matchStatus">
+
+                        <option value="Upcoming">
+                            Upcoming
+                        </option>
+
+                        <option value="Live">
+                            Live
+                        </option>
+
+                        <option value="Finished">
+                            Finished
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button
+                type="submit"
+                id="addMatch"
+                class="save-team-btn">
+
+                ➕ Add Match
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     MATCH LIST
+========================================== -->
+
+<section class="match-list-section">
+
+    <div class="section-header">
+
+        <h2>📋 Match List</h2>
+
+        <p>All tournament matches will appear here.</p>
+
+    </div>
+
+    <div id="matchList">
+
+        <!-- Match Cards will load here -->
+
+    </div>
+
+</section>
 <section class="team-section">
 
     <div class="section-header">
