@@ -1,0 +1,464 @@
+/* ==========================================
+   RS Emon Tournament Maker
+   result.css
+   Part 1 - Result Management UI
+========================================== */
+
+
+/* ==========================================
+   RESULT SECTION
+========================================== */
+
+.result-section,
+.result-list-section{
+
+    margin-top:30px;
+
+}
+
+
+/* ==========================================
+   RESULT FORM CARD
+========================================== */
+
+.result-card{
+
+    background:#1b1b1b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+}
+
+
+
+/* ==========================================
+   SCORE INPUT
+========================================== */
+
+#homeScore,
+#awayScore{
+
+    text-align:center;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ==========================================
+   RESULT BUTTON
+========================================== */
+
+#updateResult{
+
+    margin-top:10px;
+
+}
+
+
+
+/* ==========================================
+   RESULT LIST
+========================================== */
+
+#resultList{
+
+    margin-top:20px;
+
+    display:grid;
+
+    gap:18px;
+
+}
+/* ==========================================
+   RESULT CARD DESIGN
+   Part 2
+========================================== */
+
+
+.result-item{
+
+    background:#1f1f1f;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:.3s;
+
+}
+
+
+.result-item:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#00d4ff;
+
+    box-shadow:
+    0 10px 25px rgba(0,212,255,.15);
+
+}
+
+
+/* ==========================================
+   SCORE BOARD
+========================================== */
+
+
+.score-board{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:20px;
+
+}
+
+
+.result-team{
+
+    flex:1;
+
+    text-align:center;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+
+.score{
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:#00d4ff;
+
+    min-width:80px;
+
+    text-align:center;
+
+}
+
+
+.vs-text{
+
+    color:#aaa;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ==========================================
+   RESULT DETAILS
+========================================== */
+
+
+.result-info{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    color:#bbb;
+
+    font-size:14px;
+
+}
+
+
+
+/* ==========================================
+   WINNER STYLE
+========================================== */
+
+
+.winner{
+
+    color:#00ff99;
+
+}
+
+
+.draw{
+
+    color:#f1c40f;
+
+}
+
+
+/* ==========================================
+   STATUS BADGE
+========================================== */
+
+
+.result-status{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    background:#00c853;
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:768px){
+
+
+    .score-board{
+
+        gap:10px;
+
+    }
+
+
+    .result-team{
+
+        font-size:15px;
+
+    }
+
+
+    .score{
+
+        font-size:25px;
+
+    }
+
+
+}
+/* ==========================================
+   RESULT ACTIONS & FINAL STYLE
+   Part 3
+========================================== */
+
+
+/* ==========================================
+   RESULT ACTION BUTTONS
+========================================== */
+
+.result-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+
+.result-actions button{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    color:#fff;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+/* Edit Button */
+
+.edit-result{
+
+    background:#f39c12;
+
+}
+
+
+.edit-result:hover{
+
+    background:#d68910;
+
+}
+
+
+
+/* Delete Button */
+
+.delete-result{
+
+    background:#e74c3c;
+
+}
+
+
+.delete-result:hover{
+
+    background:#c0392b;
+
+}
+
+
+
+/* ==========================================
+   EMPTY RESULT
+========================================== */
+
+
+.empty-result{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    background:#1b1b1b;
+
+    border:2px dashed #444;
+
+    border-radius:16px;
+
+    color:#999;
+
+}
+
+
+.empty-result h3{
+
+    color:#ddd;
+
+    margin-bottom:10px;
+
+}
+
+
+
+/* ==========================================
+   LOADING
+========================================== */
+
+
+.result-loading{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#00d4ff;
+
+    font-size:16px;
+
+}
+
+
+
+/* ==========================================
+   RESULT TITLE
+========================================== */
+
+
+.result-title{
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+}
+
+
+.result-title h3{
+
+    color:#fff;
+
+    font-size:22px;
+
+}
+
+
+.result-title span{
+
+    color:#aaa;
+
+    font-size:14px;
+
+}
+
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+
+@media(max-width:480px){
+
+
+    .result-actions{
+
+        flex-direction:column;
+
+    }
+
+
+    .score-board{
+
+        flex-direction:column;
+
+    }
+
+
+    .result-card{
+
+        padding:18px;
+
+    }
+
+}
