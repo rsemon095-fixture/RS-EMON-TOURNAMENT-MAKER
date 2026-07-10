@@ -1,0 +1,170 @@
+/* ==========================================
+   RS Emon Tournament Maker
+   point.css
+   Part 2 - Point Table Design
+========================================== */
+
+
+/* ==========================================
+   POINT SECTION
+========================================== */
+
+.point-section{
+
+    margin-top:30px;
+
+}
+
+
+/* ==========================================
+   TABLE CARD
+========================================== */
+
+.table-card{
+
+    background:#1b1b1b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    overflow-x:auto;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+}
+
+
+
+/* ==========================================
+   POINT TABLE
+========================================== */
+
+#pointTable{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:700px;
+
+}
+
+
+
+#pointTable th{
+
+    background:#111;
+
+    color:#00d4ff;
+
+    padding:14px;
+
+    text-align:center;
+
+    font-size:14px;
+
+}
+
+
+
+#pointTable td{
+
+    padding:13px;
+
+    text-align:center;
+
+    color:#ddd;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+/* ==========================================
+   TEAM NAME
+========================================== */
+
+#pointTable td:nth-child(2){
+
+    text-align:left;
+
+    font-weight:600;
+
+    color:#fff;
+
+}
+
+
+
+/* ==========================================
+   ROW HOVER
+========================================== */
+
+#pointTable tbody tr{
+
+    transition:.3s;
+
+}
+
+
+#pointTable tbody tr:hover{
+
+    background:rgba(0,212,255,.08);
+
+}
+
+
+
+/* ==========================================
+   TOP RANK
+========================================== */
+
+.rank-top{
+
+    color:#00ff99;
+
+    font-weight:bold;
+
+}
+
+
+/* ==========================================
+   QUALIFY STYLE
+========================================== */
+
+.qualify{
+
+    border-left:4px solid #00ff99;
+
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+
+    .table-card{
+
+        padding:12px;
+
+    }
+
+
+    #pointTable th,
+    #pointTable td{
+
+        padding:10px;
+
+        font-size:13px;
+
+    }
+
+}
