@@ -339,7 +339,147 @@ Save Tournament
 <!-- ==========================================
      MATCH MANAGEMENT
 ========================================== -->
+<!-- ==========================================
+     RESULT MANAGEMENT
+========================================== -->
 
+<section class="result-section">
+
+    <div class="section-header">
+
+        <h2>🏆 Result Management</h2>
+
+        <p>Update Match Score & Result</p>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <form id="resultForm">
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label>Select Match</label>
+
+                    <select id="resultMatch" required>
+
+                        <option value="">
+                            Select Match
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label>Home Score</label>
+
+                    <input
+
+                        type="number"
+
+                        id="homeScore"
+
+                        min="0"
+
+                        placeholder="0"
+
+                        required
+
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>Away Score</label>
+
+                    <input
+
+                        type="number"
+
+                        id="awayScore"
+
+                        min="0"
+
+                        placeholder="0"
+
+                        required
+
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <button
+
+                type="submit"
+
+                id="updateResult"
+
+                class="save-team-btn">
+
+                🏆 Update Result
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==========================================
+     RESULT LIST
+========================================== -->
+
+<section class="result-list-section">
+
+
+    <div class="section-header">
+
+        <h2>📋 Updated Results</h2>
+
+
+    </div>
+
+
+    <div id="resultList">
+
+
+        <!-- Results Load Here -->
+
+
+    </div>
+
+
+</section>
 <section class="match-section">
 
     <div class="section-header">
