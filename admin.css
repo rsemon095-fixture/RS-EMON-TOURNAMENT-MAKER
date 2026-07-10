@@ -1,0 +1,1057 @@
+/*=========================================
+        RS Emon Admin Panel
+            Part - 1
+=========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+:root{
+
+    --bg:#07151f;
+    --card:#102635;
+    --green:#00d26a;
+    --gold:#ffd700;
+    --white:#ffffff;
+    --text:#d7e3eb;
+    --danger:#ff3b30;
+
+}
+
+body{
+
+    background:linear-gradient(180deg,#07151f,#102635,#07151f);
+
+    color:var(--white);
+
+    min-height:100vh;
+
+}
+
+/*=========================================
+        ADMIN CONTAINER
+=========================================*/
+
+.admin-container{
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+/*=========================================
+        HEADER
+=========================================*/
+
+.admin-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    margin-bottom:25px;
+
+}
+
+.admin-profile{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid var(--green);
+
+    box-shadow:0 0 20px rgba(0,255,153,.4);
+
+}
+
+.admin-header h1{
+
+    font-size:28px;
+
+    animation:rgbText 5s linear infinite;
+
+}
+
+.admin-header p{
+
+    color:#cbd5e1;
+
+    margin-top:6px;
+
+}
+
+/*=========================================
+        RGB ANIMATION
+=========================================*/
+
+@keyframes rgbText{
+
+0%{color:#00ff99;}
+
+25%{color:#00ffff;}
+
+50%{color:#ffd700;}
+
+75%{color:#ff3b30;}
+
+100%{color:#00ff99;}
+
+}
+/*=========================================
+        ADMIN CARD
+=========================================*/
+
+.admin-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+}
+
+.admin-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--green);
+
+    box-shadow:0 0 20px rgba(0,255,153,.25);
+
+}
+
+.admin-card h2{
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+}
+
+.admin-card h2 i{
+
+    margin-right:10px;
+
+}
+
+/*=========================================
+        LABEL
+=========================================*/
+
+.admin-card label{
+
+    display:block;
+
+    margin:15px 0 8px;
+
+    color:#dbe6ee;
+
+    font-weight:600;
+
+}
+
+/*=========================================
+        INPUT
+=========================================*/
+
+.admin-card input,
+
+.admin-card select,
+
+.admin-card textarea{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#163445;
+
+    color:#fff;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.admin-card textarea{
+
+    resize:none;
+
+}
+
+.admin-card input:focus,
+
+.admin-card select:focus,
+
+.admin-card textarea:focus{
+
+    border:2px solid var(--green);
+
+    box-shadow:0 0 15px rgba(0,255,153,.25);
+
+}
+
+/*=========================================
+        BUTTON
+=========================================*/
+
+.admin-card button{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(45deg,#00c853,#00e676);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.admin-card button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(0,255,153,.35);
+
+}
+
+/*=========================================
+      TEXTAREA
+=========================================*/
+
+textarea{
+
+    min-height:120px;
+
+}
+/*=========================================
+        PROFILE CARD
+=========================================*/
+
+.profile-card{
+
+    text-align:center;
+
+}
+
+.admin-photo{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid var(--gold);
+
+    margin-bottom:15px;
+
+    box-shadow:0 0 25px rgba(255,215,0,.35);
+
+}
+
+.profile-card h2{
+
+    color:var(--gold);
+
+    margin-bottom:8px;
+
+}
+
+.profile-card p{
+
+    color:#cbd5e1;
+
+}
+
+/*=========================================
+        LIVE MATCH PANEL
+=========================================*/
+
+.live-panel{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+.score-box{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.score-box input{
+
+    text-align:center;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+/*=========================================
+        STATISTICS
+=========================================*/
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+}
+
+.stat-box{
+
+    background:#163445;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-5px);
+
+    background:#1d4257;
+
+}
+
+.stat-box h3{
+
+    color:var(--green);
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+.stat-box p{
+
+    color:#dbe6ee;
+
+    font-size:14px;
+
+}
+
+/*=========================================
+        BUTTON COLORS
+=========================================*/
+
+#saveTournament{
+
+    background:linear-gradient(45deg,#00c853,#00e676);
+
+}
+
+#saveLive{
+
+    background:linear-gradient(45deg,#2196f3,#00bcd4);
+
+}
+
+#saveNotice{
+
+    background:linear-gradient(45deg,#ff9800,#ffc107);
+
+}
+
+#savePoints{
+
+    background:linear-gradient(45deg,#9c27b0,#673ab7);
+
+}
+
+#saveStats{
+
+    background:linear-gradient(45deg,#ff5722,#ff9800);
+
+}
+
+#maintenanceBtn{
+
+    background:linear-gradient(45deg,#e53935,#c62828);
+
+}
+
+#updateBtn{
+
+    background:linear-gradient(45deg,#3949ab,#1e88e5);
+
+}
+
+/*=========================================
+        BUTTON HOVER
+=========================================*/
+
+#saveTournament:hover,
+#saveLive:hover,
+#saveNotice:hover,
+#savePoints:hover,
+#saveStats:hover,
+#maintenanceBtn:hover,
+#updateBtn:hover{
+
+    filter:brightness(1.1);
+
+    transform:scale(1.02);
+
+}
+/*=========================================
+        LOGOUT BUTTON
+=========================================*/
+
+.logout-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:linear-gradient(45deg,#ff1744,#d50000);
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.logout-btn i{
+
+    margin-right:10px;
+
+}
+
+.logout-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(255,0,0,.35);
+
+}
+
+/*=========================================
+            FOOTER
+=========================================*/
+
+footer{
+
+    text-align:center;
+
+    margin:40px 0 20px;
+
+    padding:20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer h3{
+
+    color:var(--gold);
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+footer p{
+
+    color:#cbd5e1;
+
+    font-size:14px;
+
+}
+
+/*=========================================
+        POPUP MESSAGE
+=========================================*/
+
+.popup-message{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    background:#00c853;
+
+    color:#fff;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    transform:translateY(-30px);
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+.popup-message.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*=========================================
+        SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#07151f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(var(--green),var(--gold));
+
+    border-radius:20px;
+
+}
+
+/*=========================================
+        MOBILE RESPONSIVE
+=========================================*/
+
+@media(max-width:768px){
+
+.admin-header{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.admin-profile{
+
+width:70px;
+
+height:70px;
+
+}
+
+.admin-header h1{
+
+font-size:22px;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.live-panel{
+
+grid-template-columns:1fr;
+
+}
+
+.admin-card{
+
+padding:18px;
+
+}
+
+.admin-card h2{
+
+font-size:20px;
+
+}
+
+.logout-btn{
+
+font-size:16px;
+
+}
+
+}
+/*=========================================
+        RGB BORDER ANIMATION
+=========================================*/
+
+.rgb-border{
+
+    border:2px solid transparent;
+
+    background:
+    linear-gradient(#102635,#102635) padding-box,
+    linear-gradient(45deg,#00ff99,#00ffff,#ffd700,#ff3b30,#00ff99) border-box;
+
+    animation:rgbBorder 6s linear infinite;
+
+}
+
+@keyframes rgbBorder{
+
+0%{
+
+filter:hue-rotate(0deg);
+
+}
+
+100%{
+
+filter:hue-rotate(360deg);
+
+}
+
+}
+
+/*=========================================
+        GLASS GLOW EFFECT
+=========================================*/
+
+.admin-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.admin-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    left:-100%;
+
+    width:250%;
+
+    height:250%;
+
+    background:linear-gradient(
+
+        transparent,
+
+        rgba(255,255,255,.08),
+
+        transparent
+
+    );
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+.admin-card:hover::before{
+
+    top:100%;
+
+    left:100%;
+
+}
+
+/*=========================================
+        STATUS BADGE
+=========================================*/
+
+.status-badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#00c853;
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+.status-offline{
+
+    background:#ff3b30;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/*=========================================
+        BUTTON CLICK EFFECT
+=========================================*/
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+/*=========================================
+        INPUT PLACEHOLDER
+=========================================*/
+
+input::placeholder,
+textarea::placeholder{
+
+    color:#9fb2be;
+
+}
+
+/*=========================================
+        CARD FADE ANIMATION
+=========================================*/
+
+.admin-card{
+
+    animation:fadeCard .6s ease;
+
+}
+
+@keyframes fadeCard{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/*=========================================
+        SECTION SPACING
+=========================================*/
+
+section{
+
+    margin-bottom:25px;
+
+}
+/*=========================================
+        FINAL PREMIUM EFFECTS
+=========================================*/
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+/*=========================================
+        TEXT SELECTION
+=========================================*/
+
+::selection{
+
+    background:var(--green);
+
+    color:#000;
+
+}
+
+/*=========================================
+        IMAGE EFFECT
+=========================================*/
+
+img{
+
+    transition:.4s ease;
+
+}
+
+img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*=========================================
+        INPUT DISABLED
+=========================================*/
+
+input:disabled,
+textarea:disabled,
+select:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+/*=========================================
+        BUTTON LOADING
+=========================================*/
+
+.loading-btn{
+
+    opacity:.8;
+
+    pointer-events:none;
+
+}
+
+/*=========================================
+        SHADOW EFFECT
+=========================================*/
+
+.shadow-green{
+
+    box-shadow:0 0 20px rgba(0,255,153,.35);
+
+}
+
+.shadow-gold{
+
+    box-shadow:0 0 20px rgba(255,215,0,.35);
+
+}
+
+/*=========================================
+        CARD BORDER EFFECT
+=========================================*/
+
+.admin-card{
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.admin-card:hover{
+
+    border-color:var(--green);
+
+}
+
+/*=========================================
+        FOOTER COPYRIGHT
+=========================================*/
+
+footer::after{
+
+    content:"© 2026 RS Emon Tournament Maker";
+
+    display:block;
+
+    margin-top:12px;
+
+    color:#90a4ae;
+
+    font-size:13px;
+
+}
+
+/*=========================================
+        MOBILE FIX
+=========================================*/
+
+@media(max-width:480px){
+
+.admin-container{
+
+padding:12px;
+
+}
+
+.admin-card{
+
+padding:15px;
+
+border-radius:15px;
+
+}
+
+.admin-header{
+
+padding:15px;
+
+}
+
+.admin-header h1{
+
+font-size:20px;
+
+}
+
+.admin-card button{
+
+font-size:15px;
+
+padding:12px;
+
+}
+
+.admin-photo{
+
+width:90px;
+
+height:90px;
+
+}
+
+}
+
+/*=========================================
+        DESKTOP FIX
+=========================================*/
+
+@media(min-width:1024px){
+
+.admin-container{
+
+max-width:1000px;
+
+}
+
+}
+
+/*=========================================
+        END OF ADMIN CSS
+=========================================*/
