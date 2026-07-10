@@ -103,7 +103,15 @@ teamForm.addEventListener("submit", async (e) => {
         teamName.focus();
         return;
     }
+const exists = await isDuplicateTeam(team);
 
+if (!editMode && exists) {
+
+    alert("This Team already exists.");
+
+    return;
+
+}
     if (manager === "") {
         alert("Please enter Manager Name.");
         managerName.focus();
@@ -119,7 +127,9 @@ teamForm.addEventListener("submit", async (e) => {
     // ==========================
     // Disable Button
     // ==========================
+if (isSaving) return;
 
+isSaving = true;
     addTeamBtn.disabled = true;
     addTeamBtn.textContent = editMode
         ? "Updating..."
@@ -180,9 +190,9 @@ teamForm.addEventListener("submit", async (e) => {
         alert("❌ Failed to save team.");
 
     }
-
+isSaving = false;
     finally {
-
+isSaving = false;
         addTeamBtn.disabled = false;
 
         addTeamBtn.innerHTML = editMode
