@@ -1,0 +1,346 @@
+/* ==========================================
+   RS Emon Tournament Maker
+   group.css
+   Part 1 - Basic Group UI
+========================================== */
+
+
+/* ==========================================
+   GROUP SECTION
+========================================== */
+
+.group-section,
+.group-list-section{
+
+    margin-top:30px;
+
+}
+
+
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.group-section .section-header,
+.group-list-section .section-header{
+
+    margin-bottom:20px;
+
+}
+
+
+
+.group-section h2,
+.group-list-section h2{
+
+    color:#fff;
+
+    font-size:24px;
+
+}
+
+
+
+/* ==========================================
+   GROUP CARD
+========================================== */
+
+.group-card{
+
+    background:#1b1b1b;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+}
+
+
+
+/* ==========================================
+   GROUP FORM
+========================================== */
+
+#groupForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+/* ==========================================
+   INPUT
+========================================== */
+
+#groupName{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:1px solid #333;
+
+    background:#111;
+
+    color:#fff;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+
+
+#groupName:focus{
+
+    border-color:#00d4ff;
+
+}
+
+
+
+/* ==========================================
+   ADD GROUP BUTTON
+========================================== */
+
+#addGroup{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#00d4ff;
+
+    color:#000;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+#addGroup:hover{
+
+    opacity:.85;
+
+}
+/* ==========================================
+   RS Emon Tournament Maker
+   group.css
+   Part 2 - Group List Design
+========================================== */
+
+
+/* ==========================================
+   GROUP LIST
+========================================== */
+
+#groupList{
+
+    margin-top:20px;
+
+    display:grid;
+
+    gap:15px;
+
+}
+
+
+
+/* ==========================================
+   GROUP ITEM CARD
+========================================== */
+
+.group-item{
+
+    background:#1f1f1f;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    transition:.3s;
+
+}
+
+
+
+.group-item:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#00d4ff;
+
+}
+
+
+
+/* ==========================================
+   GROUP TITLE
+========================================== */
+
+.group-title{
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+
+
+/* ==========================================
+   GROUP COUNT
+========================================== */
+
+.group-count{
+
+    color:#aaa;
+
+    font-size:14px;
+
+    margin-top:5px;
+
+}
+
+
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+
+.group-actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+
+.group-actions button{
+
+    padding:10px 16px;
+
+    border:none;
+
+    border-radius:10px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+
+
+/* Edit */
+
+.edit-group{
+
+    background:#f39c12;
+
+}
+
+
+
+/* Delete */
+
+.delete-group{
+
+    background:#e74c3c;
+
+}
+
+
+
+/* ==========================================
+   EMPTY GROUP
+========================================== */
+
+.empty-group{
+
+    text-align:center;
+
+    padding:35px;
+
+    background:#1b1b1b;
+
+    border-radius:15px;
+
+    color:#aaa;
+
+}
+
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+
+    .group-item{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+
+    }
+
+
+
+    .group-actions{
+
+        width:100%;
+
+    }
+
+
+
+    .group-actions button{
+
+        flex:1;
+
+    }
+
+
+}
